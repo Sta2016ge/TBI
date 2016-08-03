@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.prime.com.tr/ui"
+      xmlns:cc="http://java.sun.com/jsf/composite/composite"
+      xmlns:w="http://com.googlecode/whiteboard">
+<ui:composition template="/templates/centredPageLayout.xhtml">
+    <ui:define name="center">
+        <p:fieldset legend="New Whiteboard">
+            <p:messages/>
+            <h:form id="mainForm" prependId="false">
+                <h:panelGrid columns="2" id="whiteboardPanel" columnClasses="whiteboardCol1,whiteboardCol2"
+                             footerClass="whiteboardFooter">
+                             
+                    <cc:requiredLabel for="wbTitle" value="Whiteboard title"/>
+                    <p:inputText id="wbTitle" value="#{createWhiteboard.title}" required="true" requiredMessage="Please enter the whiteboard title."
+                                 label="Whiteboard title"/>
+                                 
+                    <cc:requiredLabel for="wbUserName" value="User name"/>
+                    <p:inputText id="wbUserName" value="#{createWhiteboard.creator}" required="true" requiredMessage="Please enter your name."
+                                 label="User name"/>
+                                 
+                    <cc:requiredLabel for="wbUserEmail" value="User Email"/>
+                    <p:inputText id="wbUserEmail" value="#{createWhiteboard.email}" required="true" requiredMessage="Please enter your email address."
+                                 label="User Email" validatorMessage="Invalid email format : xxxxxx@xxxx.xxx">
+                                 
+                                 
+                            <f:validateRegex pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+                            
+                            
+                            
+                    </p:inputText>
+                    
+                    <cc:requiredLabel for="wbInviters" value="Inviters"/>
+                    
+                    <p:inputTextarea rows="6" cols="33" id="wbInviters" required="true" requiredMessage="Please enter your Inviters." validatorMessage="Format inviters : email1,email2,email3..." 
+                    value="#{createWhiteboard.inviters}" >
+                    
+                    <f:validateRegex pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})(,[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,}))*$" />
+                    
+                    </p:inputTextarea>
+                    
+                    
+                    
+                    <h:outputLabel value="Whiteboard width" for="wbWidth"/>
+                    <h:panelGroup>
+                        <p:spinner id="wbWidth" min="0" max="9999" suffix="px" value="#{createWhiteboard.width}"
+                                   label="Whiteboard width" maxlength="4">
+                            <w:pixelConverter/>
+                        </p:spinner>
+                        <h:outputLabel value="Whiteboard height" for="wbHeight"
+                                       style="margin-left: 10px; margin-right: 10px;"/>
+                        <p:spinner id="wbHeight" min="0" max="9999" suffix="px" value="#{createWhiteboard.height}"
+                                   label="Whiteboard height" maxlength="4">
+                            <w:pixelConverter/>
+                        </p:spinner>
+                    </h:panelGroup>
+                    <!--
+                    <h:outputLabel for="transport" value="Select transport"/>
+                    <h:selectOneMenu id="transport" value="#{createWhiteboard.pubSubTransport}" style="width: 110px;">
+                        <f:selectItems value="#{createWhiteboard.transports}"/>
+                    </h:selectOneMenu>
+                    -->
+                    <f:facet name="footer">
+                        <p:captcha label="Captcha" theme="white" requiredMessage="Please enter the captcha."/>
+                        <p:commandButton id="dialogButton" value="Create and Start Drawing!" ajax="false"
+                                         action="#{createWhiteboard.create}"/>
+                    </f:facet>
+                </h:panelGrid>
+                <p:focus for="wbTitle"/>
+            </h:form>
+        </p:fieldset>
+    </ui:define>
+    <ui:define name="resources">
+        <h:outputStylesheet library="css" name="startdialog.css"/>
+    </ui:define>
+</ui:composition>
+</html>

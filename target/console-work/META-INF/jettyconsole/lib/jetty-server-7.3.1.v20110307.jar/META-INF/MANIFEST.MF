@@ -1,0 +1,83 @@
+Manifest-Version: 1.0
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0, http://www
+ .eclipse.org/org/documents/epl-v10.php
+Bundle-SymbolicName: org.eclipse.jetty.server
+Archiver-Version: Plexus Archiver
+Built-By: gregw
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bnd-LastModified: 1299484098788
+Bundle-Copyright: Copyright (c) 2008-2009 Mort Bay Consulting Pty. Ltd
+ .
+Bundle-DocURL: http://www.eclipse.org/jetty
+Import-Package: javax.naming,javax.net.ssl,javax.security.auth,javax.s
+ ecurity.cert,javax.servlet;version="[2.5,3.0)",javax.servlet.http;ver
+ sion="[2.5,3.0)",javax.sql,org.eclipse.jetty;version="[7.3,8)",org.ec
+ lipse.jetty.continuation;version="[7.3,8)",org.eclipse.jetty.http;ver
+ sion="[7.3,8)",org.eclipse.jetty.http.ssl;version="[7.3,8)",org.eclip
+ se.jetty.io;version="[7.3,8)",org.eclipse.jetty.io.bio;version="[7.3,
+ 8)",org.eclipse.jetty.io.nio;version="[7.3,8)",org.eclipse.jetty.jmx;
+ resolution:=optional;version="[7.3,8)",org.eclipse.jetty.server;versi
+ on="[7.3,8)",org.eclipse.jetty.server.bio;version="[7.3,8)",org.eclip
+ se.jetty.server.handler;version="[7.3,8)",org.eclipse.jetty.server.ha
+ ndler.jmx;version="[7.3,8)",org.eclipse.jetty.server.jmx;version="[7.
+ 3,8)",org.eclipse.jetty.server.nio;version="[7.3,8)",org.eclipse.jett
+ y.server.nio.jmx;version="[7.3,8)",org.eclipse.jetty.server.session;v
+ ersion="[7.3,8)",org.eclipse.jetty.server.session.jmx;version="[7.3,8
+ )",org.eclipse.jetty.server.ssl;version="[7.3,8)",org.eclipse.jetty.u
+ til;version="[7.3,8)",org.eclipse.jetty.util.component;version="[7.3,
+ 8)",org.eclipse.jetty.util.log;version="[7.3,8)",org.eclipse.jetty.ut
+ il.resource;version="[7.3,8)",org.eclipse.jetty.util.statistic;versio
+ n="[7.3,8)",org.eclipse.jetty.util.thread;version="[7.3,8)"
+Export-Package: org.eclipse.jetty;version="7.3.1.v20110307",org.eclips
+ e.jetty.server;uses:="org.eclipse.jetty.io,org.eclipse.jetty.util.log
+ ,org.eclipse.jetty.util.statistic,org.eclipse.jetty.http,org.eclipse.
+ jetty.util.thread,org.eclipse.jetty.util.component,javax.servlet,org.
+ eclipse.jetty.continuation,org.eclipse.jetty.server.handler,javax.ser
+ vlet.http,org.eclipse.jetty.util,org.eclipse.jetty.server.ssl,org.ecl
+ ipse.jetty.server.nio,org.eclipse.jetty.util.resource,org.eclipse.jet
+ ty.io.nio,org.eclipse.jetty.server.session,javax.security.auth";versi
+ on="7.3.1.v20110307",org.eclipse.jetty.server.bio;uses:="org.eclipse.
+ jetty.server,org.eclipse.jetty.io.bio,org.eclipse.jetty.io,org.eclips
+ e.jetty.http,org.eclipse.jetty.util.thread,org.eclipse.jetty.util.log
+ ";version="7.3.1.v20110307",org.eclipse.jetty.server.handler;uses:="o
+ rg.eclipse.jetty.server,org.eclipse.jetty.util.component,org.eclipse.
+ jetty.util.log,org.eclipse.jetty.util,org.eclipse.jetty.io.nio,org.ec
+ lipse.jetty.io,org.eclipse.jetty.util.thread,org.eclipse.jetty.http,j
+ avax.servlet,javax.servlet.http,org.eclipse.jetty.util.resource,org.e
+ clipse.jetty.util.statistic,org.eclipse.jetty.continuation";version="
+ 7.3.1.v20110307",org.eclipse.jetty.server.handler.jmx;uses:="org.ecli
+ pse.jetty.jmx,org.eclipse.jetty.server.handler,org.eclipse.jetty.util
+ .resource,org.eclipse.jetty.util";version="7.3.1.v20110307",org.eclip
+ se.jetty.server.jmx;uses:="org.eclipse.jetty.server,org.eclipse.jetty
+ .jmx,org.eclipse.jetty.server.handler";version="7.3.1.v20110307",org.
+ eclipse.jetty.server.nio;uses:="org.eclipse.jetty.server,org.eclipse.
+ jetty.io.nio,org.eclipse.jetty.io,org.eclipse.jetty.util.log,org.ecli
+ pse.jetty.http,org.eclipse.jetty.util.thread,org.eclipse.jetty.util,o
+ rg.eclipse.jetty.util.component";version="7.3.1.v20110307",org.eclips
+ e.jetty.server.nio.jmx;version="7.3.1.v20110307",org.eclipse.jetty.se
+ rver.session;uses:="org.eclipse.jetty.server,org.eclipse.jetty.util.c
+ omponent,org.eclipse.jetty.util.log,javax.servlet.http,javax.servlet,
+ org.eclipse.jetty.server.handler,org.eclipse.jetty.util,org.eclipse.j
+ etty.util.statistic,org.eclipse.jetty.http,javax.naming,javax.sql";ve
+ rsion="7.3.1.v20110307",org.eclipse.jetty.server.session.jmx;version=
+ "7.3.1.v20110307",org.eclipse.jetty.server.ssl;uses:="org.eclipse.jet
+ ty.server,org.eclipse.jetty.io,javax.security.cert,javax.net.ssl,org.
+ eclipse.jetty.util.log,org.eclipse.jetty.util,org.eclipse.jetty.http.
+ ssl,org.eclipse.jetty.io.nio,org.eclipse.jetty.http,org.eclipse.jetty
+ .server.nio,org.eclipse.jetty.server.bio,org.eclipse.jetty.io.bio";ve
+ rsion="7.3.1.v20110307"
+Bundle-Name: Jetty :: Server Core
+Bundle-Localization: plugin
+Bundle-Description: The core jetty server artifact.
+Implementation-Version: 7.3.1.v20110307
+Bundle-ManifestVersion: 2
+Bundle-Vendor: Eclipse Jetty Project
+url: http://www.eclipse.org/jetty
+Tool: Bnd-0.0.311
+Implementation-Vendor: Eclipse.org - Jetty
+Bundle-Version: 7.3.1.v20110307
+Bundle-Classpath: .
+Private-Package: .;version="7.3.1.v20110307"
+Created-By: 1.6.0_22 (Sun Microsystems Inc.)
+Build-Jdk: 1.6.0_22
+
